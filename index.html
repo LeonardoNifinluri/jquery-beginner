@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CREATOR09</title>
+		<link rel="stylesheet" href="style.css" type="text/css">
+    </head>
+    <body>
+
+        <!--This code below to use jQuery-->
+        <!--Why in the body? Because if in body, the jQuery doesn't have to interact with DOM-->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+        <div class="card">
+            <h2 id="headerText" class="cardText">PERHATIAN</h2>
+            <button id="changeTextBtn" class="myBtn">TEKNIK</button>
+        </div>
+
+        <script>
+            let counter = 1;
+            let message = [
+                "PERHATIAN",
+                "TEKNIK",
+                "MANTAP MENTONK",
+                "WE ARE THE CHAMPION",
+                "BRAVO BRAVO BRAVO!!!",
+                "KEEP ON FIGHTING TILL THE END",
+                "NOW AND FOREVER!",
+                "YEAH!"
+            ];
+            const n = message.length
+            $('#changeTextBtn').click(function() {
+                if(counter % n >= 6 && counter % counter < n){
+                    $('#headerText').text("NOW AND FOREVER!");
+                    $(this).text("YEAH!");
+                    counter++;
+                }else{
+                    $('#headerText').text(message[counter % n]);
+                    $(this).text(message[++counter % n]);
+                }
+            });
+        </script>
+
+    </body>    
+</html>
